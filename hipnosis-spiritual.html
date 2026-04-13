@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gerbang Batin — Ilmu Hipnosis, Neurosains & Dunia Spiritual</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --void: #030308; --deep: #0a0a1a; --card: #0f0f20; --border: #2a1f4e;
+    --gold: #c9a227; --gold-light: #e8c96a; --gold-dim: #7a6218;
+    --amethyst: #7b3fa0; --amethyst-glow: #a855d4;
+    --cyan: #00d4cc; --neuro: #1a6b8a; --neuro-glow: #22a8d4; --neuro-light: #7fd4f0;
+    --text: #d4cce8; --text-dim: #7a7395; --locked: #1a0a2e;
+    --master-border: #b8860b; --master-glow: #ffd700;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--void);color:var(--text);font-family:'Crimson Pro',serif;font-size:18px;line-height:1.8;min-height:100vh;overflow-x:hidden;}
+  body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 20% 10%,rgba(123,63,160,.12) 0%,transparent 60%),radial-gradient(ellipse 60% 40% at 80% 80%,rgba(0,212,204,.06) 0%,transparent 60%),radial-gradient(ellipse 100% 80% at 50% 50%,rgba(201,162,39,.04) 0%,transparent 70%);pointer-events:none;z-index:0;}
+  .stars{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
+  .star{position:absolute;background:white;border-radius:50%;animation:twinkle var(--dur,3s) var(--delay,0s) infinite alternate ease-in-out;}
+  @keyframes twinkle{from{opacity:.05;transform:scale(.8);}to{opacity:.6;transform:scale(1.2);}}
+  header{position:relative;z-index:10;text-align:center;padding:70px 20px 50px;border-bottom:1px solid var(--border);background:linear-gradient(to bottom,rgba(123,63,160,.15),transparent);}
+  .sigil{font-size:52px;display:block;margin-bottom:10px;animation:float 4s ease-in-out infinite;filter:drop-shadow(0 0 20px rgba(201,162,39,.6));}
+  @keyframes float{0%,100%{transform:translateY(0) rotate(-2deg);}50%{transform:translateY(-10px) rotate(2deg);}}
+  header h1{font-family:'Cinzel Decorative',serif;font-size:clamp(1.4rem,5vw,2.7rem);color:var(--gold);text-shadow:0 0 30px rgba(201,162,39,.5),0 0 60px rgba(201,162,39,.2);letter-spacing:.05em;line-height:1.3;margin-bottom:12px;}
+  header p{font-family:'Cinzel',serif;font-size:.85rem;color:var(--text-dim);letter-spacing:.2em;text-transform:uppercase;}
+  .divider-ornament{display:flex;align-items:center;justify-content:center;gap:16px;margin:28px auto 0;max-width:400px;}
+  .divider-ornament span{flex:1;height:1px;background:linear-gradient(to right,transparent,var(--gold-dim));}
+  .divider-ornament span:last-child{background:linear-gradient(to left,transparent,var(--gold-dim));}
+  .divider-ornament em{color:var(--gold);font-style:normal;font-size:1.2rem;}
+  main{position:relative;z-index:5;max-width:900px;margin:0 auto;padding:60px 20px 100px;}
+  .intro-banner{background:linear-gradient(135deg,rgba(123,63,160,.2),rgba(201,162,39,.08));border:1px solid var(--amethyst);border-radius:4px;padding:28px 34px;margin-bottom:44px;text-align:center;position:relative;overflow:hidden;}
+  .intro-banner::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 40px,rgba(123,63,160,.03) 40px,rgba(123,63,160,.03) 41px);}
+  .intro-banner h2{font-family:'Cinzel',serif;font-size:1.05rem;color:var(--gold-light);letter-spacing:.15em;margin-bottom:12px;}
+  .intro-banner p{font-style:italic;color:var(--text);font-size:1rem;max-width:600px;margin:0 auto;}
+
+  /* MASTER BANNER */
+  .master-banner{background:linear-gradient(135deg,#0d0a00,#1a1200,#0d0a00);border:2px solid var(--master-border);border-radius:6px;padding:34px 34px 28px;margin-bottom:56px;text-align:center;position:relative;overflow:hidden;box-shadow:0 0 60px rgba(255,215,0,.08),inset 0 0 60px rgba(255,215,0,.03);}
+  .master-banner::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 30px,rgba(255,215,0,.02) 30px,rgba(255,215,0,.02) 31px);}
+  .master-crown{font-size:2.8rem;margin-bottom:6px;filter:drop-shadow(0 0 16px rgba(255,215,0,.7));animation:crownPulse 3s ease-in-out infinite;}
+  @keyframes crownPulse{0%,100%{filter:drop-shadow(0 0 16px rgba(255,215,0,.7));}50%{filter:drop-shadow(0 0 30px rgba(255,215,0,1)) drop-shadow(0 0 60px rgba(255,215,0,.4));}}
+  .master-banner h2{font-family:'Cinzel Decorative',serif;font-size:clamp(1rem,3.5vw,1.6rem);color:var(--master-glow);text-shadow:0 0 20px rgba(255,215,0,.6);margin-bottom:5px;letter-spacing:.06em;}
+  .master-subtitle{font-family:'Cinzel',serif;font-size:.75rem;letter-spacing:.25em;color:#c8a820;text-transform:uppercase;margin-bottom:20px;}
+  .price-row{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:18px;}
+  .price-original{font-family:'Cinzel',serif;font-size:.95rem;color:var(--text-dim);text-decoration:line-through;text-decoration-color:#ff6060;}
+  .price-final{font-family:'Cinzel Decorative',serif;font-size:1.7rem;color:var(--master-glow);text-shadow:0 0 14px rgba(255,215,0,.5);}
+  .discount-badge{background:#8b0000;color:#ffcccc;border:1px solid #cc3333;border-radius:3px;padding:4px 12px;font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;}
+  .master-benefits{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:16px 0 22px;text-align:left;}
+  .master-benefit-item{display:flex;align-items:flex-start;gap:9px;font-size:.88rem;color:var(--text);}
+  .master-benefit-item .bi{color:var(--master-glow);flex-shrink:0;margin-top:3px;}
+  .btn-master{background:linear-gradient(135deg,#b8860b,#7a5c00,#b8860b);background-size:200% 100%;color:var(--master-glow);border:1px solid var(--master-border);padding:14px 36px;font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;border-radius:3px;cursor:pointer;transition:all .3s;animation:masterShimmer 3s ease-in-out infinite;}
+  @keyframes masterShimmer{0%,100%{background-position:0% 50%;}50%{background-position:100% 50%;}}
+  .btn-master:hover{box-shadow:0 0 30px rgba(255,215,0,.4),0 0 60px rgba(255,215,0,.15);transform:translateY(-2px);color:white;}
+  .master-note{font-size:.78rem;color:var(--text-dim);font-style:italic;margin-top:10px;}
+
+  .section-label{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.3em;color:var(--amethyst-glow);text-transform:uppercase;margin-bottom:22px;display:flex;align-items:center;gap:14px;}
+  .section-label::after{content:'';flex:1;height:1px;background:linear-gradient(to right,var(--amethyst),transparent);}
+  .section-label.neuro{color:var(--neuro-glow);}
+  .section-label.neuro::after{background:linear-gradient(to right,var(--neuro),transparent);}
+
+  .chapter-grid{display:grid;gap:18px;margin-bottom:56px;}
+  .chapter-card{background:var(--card);border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:transform .3s,border-color .3s,box-shadow .3s;cursor:pointer;position:relative;}
+  .chapter-card:hover{transform:translateY(-3px);border-color:var(--gold-dim);box-shadow:0 8px 40px rgba(201,162,39,.1);}
+  .chapter-card.neuro-card:hover{border-color:var(--neuro);box-shadow:0 8px 40px rgba(34,168,212,.1);}
+  .chapter-card.locked{cursor:default;}
+  .chapter-card.locked:hover{transform:none;border-color:var(--border);box-shadow:none;}
+  .card-header{display:flex;align-items:flex-start;gap:18px;padding:22px 24px 16px;border-bottom:1px solid var(--border);}
+  .chapter-number{font-family:'Cinzel Decorative',serif;font-size:1.4rem;color:var(--gold-dim);min-width:40px;padding-top:2px;line-height:1;}
+  .chapter-number.neuro-num{color:var(--neuro);}
+  .card-meta{flex:1;}
+  .card-meta h3{font-family:'Cinzel',serif;font-size:1.05rem;color:var(--gold);margin-bottom:5px;line-height:1.4;}
+  .card-meta h3.neuro-title{color:var(--neuro-glow);}
+  .card-meta .subtitle{font-size:.85rem;color:var(--text-dim);font-style:italic;}
+  .lock-badge{display:flex;flex-direction:column;align-items:center;gap:4px;padding:6px 11px;border:1px solid;border-radius:3px;font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;flex-shrink:0;}
+  .lock-badge.free{border-color:var(--cyan);color:var(--cyan);background:rgba(0,212,204,.05);}
+  .lock-badge.premium{border-color:var(--gold-dim);color:var(--gold);background:rgba(201,162,39,.05);}
+  .lock-badge.neuro-badge{border-color:var(--neuro);color:var(--neuro-glow);background:rgba(26,107,138,.08);}
+  .lock-badge span{font-size:1rem;}
+  .card-preview{padding:14px 24px 18px;font-size:.95rem;color:var(--text-dim);font-style:italic;line-height:1.7;position:relative;}
+  .card-locked-overlay{display:none;position:absolute;inset:0;background:linear-gradient(to bottom,transparent 20%,var(--locked) 75%);align-items:flex-end;justify-content:center;padding:18px;}
+  .chapter-card.locked .card-locked-overlay{display:flex;}
+  .unlock-btn{background:linear-gradient(135deg,var(--amethyst),#5a1d7a);color:white;border:none;padding:9px 24px;font-family:'Cinzel',serif;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;border-radius:2px;cursor:pointer;transition:background .2s,box-shadow .2s;}
+  .unlock-btn:hover{background:linear-gradient(135deg,var(--amethyst-glow),var(--amethyst));box-shadow:0 0 20px rgba(168,85,212,.5);}
+  .unlock-btn.neuro-btn{background:linear-gradient(135deg,var(--neuro),#0d3d52);}
+  .unlock-btn.neuro-btn:hover{background:linear-gradient(135deg,var(--neuro-glow),var(--neuro));box-shadow:0 0 20px rgba(34,168,212,.5);}
+
+  /* ===== BOOK FLIP SYSTEM ===== */
+  .book-wrap{display:none;perspective:1400px;margin-top:6px;margin-bottom:22px;}
+  .book-wrap.active{display:block;}
+  .book{position:relative;width:100%;transform-style:preserve-3d;transform-origin:left center;animation:bookFlipOpen .75s cubic-bezier(.4,0,.1,1) forwards;border-radius:0 6px 6px 0;box-shadow:-8px 0 24px rgba(0,0,0,.7),0 6px 36px rgba(0,0,0,.5);}
+  @keyframes bookFlipOpen{0%{transform:rotateY(-92deg) scale(.95);opacity:0;}35%{opacity:1;}100%{transform:rotateY(0deg) scale(1);opacity:1;}}
+  .book.closing{animation:bookFlipClose .45s cubic-bezier(.4,0,.1,1) forwards;}
+  @keyframes bookFlipClose{0%{transform:rotateY(0deg) scale(1);opacity:1;}100%{transform:rotateY(-92deg) scale(.95);opacity:0;}}
+  .book::before{content:'';position:absolute;left:0;top:0;bottom:0;width:24px;background:linear-gradient(to right,rgba(0,0,0,.55),rgba(201,162,39,.05) 70%,transparent);border-radius:4px 0 0 4px;z-index:2;pointer-events:none;}
+  .book::after{content:'';position:absolute;right:0;top:0;bottom:0;width:16px;background:linear-gradient(to left,rgba(0,0,0,.3),transparent);border-radius:0 6px 6px 0;z-index:2;pointer-events:none;}
+  .book-page{background:linear-gradient(160deg,#0d0d22 0%,#111130 50%,#0d0d22 100%);border:1px solid var(--gold-dim);border-left:4px solid var(--gold-dim);border-radius:0 6px 6px 0;padding:46px 46px 56px 52px;position:relative;overflow:hidden;}
+  .book-page.neuro-page{border-color:var(--neuro);border-left-color:var(--neuro);background:linear-gradient(160deg,#080e16 0%,#0d1622 50%,#080e16 100%);}
+  .book-page::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 30px,rgba(201,162,39,.022) 30px,rgba(201,162,39,.022) 31px);pointer-events:none;}
+  .book-page::after{content:'';position:absolute;bottom:0;right:0;width:0;height:0;border-style:solid;border-width:0 0 40px 40px;border-color:transparent transparent rgba(201,162,39,.12) transparent;}
+  .page-number{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.2em;color:var(--gold-dim);opacity:.5;}
+  .book-page h2{font-family:'Cinzel',serif;font-size:1.2rem;color:var(--gold);margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid rgba(201,162,39,.2);text-align:center;letter-spacing:.06em;}
+  .book-page h2.neuro-h2{color:var(--neuro-glow);border-bottom-color:rgba(26,107,138,.3);}
+  .book-page h3{font-family:'Cinzel',serif;font-size:.94rem;color:var(--gold-light);margin:22px 0 8px;}
+  .book-page h3.neuro-h3{color:var(--neuro-light);}
+  .book-page p{margin-bottom:12px;color:var(--text);font-size:.96rem;}
+  .book-page ul{padding-left:16px;margin-bottom:12px;list-style:none;}
+  .book-page ul li{margin-bottom:5px;}
+  .book-page ul li::before{content:'◆ ';color:var(--gold-dim);font-size:.64rem;vertical-align:middle;}
+  .book-page ul.neuro-list li::before{content:'▸ ';color:var(--neuro);font-size:.74rem;}
+  .book-page blockquote{border-left:3px solid var(--amethyst);padding:11px 16px;margin:18px 0;background:rgba(123,63,160,.08);font-style:italic;color:var(--amethyst-glow);font-size:.96rem;}
+  .book-page blockquote.neuro-quote{border-color:var(--neuro);background:rgba(26,107,138,.08);color:var(--neuro-light);}
+  .info-box{background:rgba(26,107,138,.1);border:1px solid rgba(26,107,138,.4);border-radius:3px;padding:13px 16px;margin:14px 0;}
+  .info-box .info-title{font-family:'Cinzel',serif;font-size:.7rem;color:var(--neuro-glow);letter-spacing:.15em;text-transform:uppercase;margin-bottom:6px;}
+  .close-viewer{position:absolute;top:14px;right:16px;background:rgba(3,3,8,.75);border:1px solid var(--border);color:var(--text-dim);width:30px;height:30px;border-radius:2px;cursor:pointer;font-size:.9rem;display:flex;align-items:center;justify-content:center;transition:border-color .2s,color .2s;z-index:10;}
+  .close-viewer:hover{border-color:var(--gold);color:var(--gold);}
+  .content-viewer{display:none;}
+  .content-viewer.active{display:none;}
+
+  .modal-overlay{display:none;position:fixed;inset:0;z-index:1000;background:rgba(3,3,8,.93);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:20px;}
+  .modal-overlay.active{display:flex;}
+  .modal-box{background:var(--deep);border:1px solid var(--gold-dim);border-radius:4px;width:100%;max-width:510px;padding:36px;position:relative;animation:modalAppear .4s cubic-bezier(.34,1.56,.64,1);box-shadow:0 0 80px rgba(201,162,39,.1);max-height:90vh;overflow-y:auto;}
+  .modal-box.master-modal{border-color:var(--master-border);box-shadow:0 0 80px rgba(255,215,0,.12);}
+  @keyframes modalAppear{from{opacity:0;transform:scale(.88) translateY(20px);}to{opacity:1;transform:scale(1) translateY(0);}}
+  .modal-close{position:absolute;top:13px;right:13px;background:none;border:1px solid var(--border);color:var(--text-dim);width:29px;height:29px;border-radius:2px;cursor:pointer;font-size:.9rem;display:flex;align-items:center;justify-content:center;transition:all .2s;}
+  .modal-close:hover{border-color:var(--gold);color:var(--gold);}
+  .modal-sigil{font-size:36px;text-align:center;margin-bottom:12px;filter:drop-shadow(0 0 12px rgba(201,162,39,.5));}
+  .modal-box h2{font-family:'Cinzel',serif;font-size:1.1rem;color:var(--gold);text-align:center;margin-bottom:6px;}
+  .chapter-title{text-align:center;font-style:italic;color:var(--text-dim);font-size:.88rem;margin-bottom:22px;padding-bottom:16px;border-bottom:1px solid var(--border);}
+  .access-tabs{display:flex;border:1px solid var(--border);border-radius:3px;overflow:hidden;margin-bottom:20px;}
+  .tab-btn{flex:1;padding:9px;background:none;border:none;color:var(--text-dim);font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .2s;border-right:1px solid var(--border);}
+  .tab-btn:last-child{border-right:none;}
+  .tab-btn.active{background:rgba(201,162,39,.1);color:var(--gold);}
+  .tab-content{display:none;}
+  .tab-content.active{display:block;}
+  .donation-info{background:rgba(201,162,39,.05);border:1px solid var(--gold-dim);border-radius:3px;padding:16px;margin-bottom:16px;}
+  .donation-info p{font-size:.88rem;color:var(--text);margin-bottom:9px;line-height:1.6;}
+  .bank-detail{background:rgba(3,3,8,.6);border:1px solid var(--border);border-radius:3px;padding:9px 13px;margin-bottom:7px;}
+  .bank-name-label{font-family:'Cinzel',serif;font-size:.67rem;letter-spacing:.15em;color:var(--gold-dim);text-transform:uppercase;margin-bottom:3px;}
+  .bank-number{font-size:1.1rem;color:var(--gold);letter-spacing:.05em;font-weight:600;}
+  .bank-owner{font-size:.8rem;color:var(--text-dim);margin-top:2px;}
+  .master-modal-price{background:linear-gradient(135deg,rgba(184,134,11,.1),rgba(255,215,0,.05));border:1px solid var(--master-border);border-radius:4px;padding:16px;text-align:center;margin-bottom:16px;}
+  .master-modal-price .old-price{font-size:.88rem;color:var(--text-dim);text-decoration:line-through;text-decoration-color:#ff6060;}
+  .master-modal-price .new-price{font-family:'Cinzel Decorative',serif;font-size:1.8rem;color:var(--master-glow);text-shadow:0 0 12px rgba(255,215,0,.4);margin:3px 0;}
+  .master-modal-price .disc-label{display:inline-block;background:#8b0000;color:#ffcccc;border:1px solid #cc3333;border-radius:3px;padding:3px 11px;font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.1em;}
+  .form-group{margin-bottom:13px;}
+  .form-group label{display:block;font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--text-dim);margin-bottom:5px;}
+  .form-group input{width:100%;background:rgba(3,3,8,.8);border:1px solid var(--border);border-radius:2px;padding:9px 12px;color:var(--text);font-family:'Crimson Pro',serif;font-size:1rem;outline:none;transition:border-color .2s;}
+  .form-group input:focus{border-color:var(--gold-dim);}
+  .form-group input::placeholder{color:var(--text-dim);}
+  .modal-submit{width:100%;background:linear-gradient(135deg,var(--gold-dim),#4a3810);color:var(--gold-light);border:1px solid var(--gold-dim);padding:12px;font-family:'Cinzel',serif;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;border-radius:2px;cursor:pointer;transition:all .3s;margin-top:5px;}
+  .modal-submit:hover{background:linear-gradient(135deg,#7a6218,var(--gold-dim));color:white;box-shadow:0 0 24px rgba(201,162,39,.3);}
+  .modal-submit.master-submit{background:linear-gradient(135deg,var(--master-border),#5a4300);color:var(--master-glow);border-color:var(--master-border);}
+  .modal-submit.master-submit:hover{background:linear-gradient(135deg,#c8a820,var(--master-border));color:white;box-shadow:0 0 30px rgba(255,215,0,.3);}
+  .code-input-wrap input{text-align:center;letter-spacing:.3em;font-size:1.3rem;text-transform:uppercase;}
+  .verify-btn{width:100%;background:linear-gradient(135deg,rgba(123,63,160,.4),rgba(90,29,122,.6));color:white;border:1px solid var(--amethyst);padding:12px;font-family:'Cinzel',serif;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;border-radius:2px;cursor:pointer;transition:all .3s;margin-top:5px;}
+  .verify-btn:hover{background:linear-gradient(135deg,var(--amethyst),#5a1d7a);box-shadow:0 0 24px rgba(168,85,212,.3);}
+  .alert-msg{padding:8px 12px;border-radius:2px;font-size:.86rem;margin-top:9px;display:none;}
+  .alert-msg.error{background:rgba(180,40,40,.15);border:1px solid #7a2020;color:#f08080;}
+  .alert-msg.success{background:rgba(40,120,60,.15);border:1px solid #1a6030;color:#80d4a0;}
+  .alert-msg.show{display:block;}
+  .donate-cta{background:linear-gradient(135deg,rgba(201,162,39,.1),rgba(123,63,160,.1));border:1px solid var(--gold-dim);border-radius:4px;padding:36px;text-align:center;margin-top:20px;}
+  .donate-cta h3{font-family:'Cinzel',serif;font-size:1.15rem;color:var(--gold);margin-bottom:11px;}
+  .donate-cta p{color:var(--text-dim);font-style:italic;max-width:480px;margin:0 auto 20px;}
+  .tier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-bottom:22px;}
+  @media(max-width:520px){.tier-grid{grid-template-columns:1fr;}}
+  .tier-card{border:1px solid var(--border);border-radius:3px;padding:14px 9px;cursor:pointer;transition:all .25s;}
+  .tier-card:hover,.tier-card.selected{border-color:var(--gold);background:rgba(201,162,39,.08);}
+  .tier-icon{font-size:1.6rem;margin-bottom:6px;}
+  .tier-name{font-family:'Cinzel',serif;font-size:.7rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:3px;}
+  .tier-desc{font-size:.8rem;color:var(--text-dim);font-style:italic;}
+  footer{position:relative;z-index:5;text-align:center;padding:36px 20px;border-top:1px solid var(--border);font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.2em;color:var(--text-dim);}
+  footer a{color:var(--gold-dim);text-decoration:none;}
+  @media(max-width:600px){.book-page{padding:32px 20px 44px 26px;}.modal-box{padding:26px 16px;}.master-banner,.donate-cta{padding:22px 16px;}}
+</style>
+</head>
+<body>
+<div class="stars" id="stars"></div>
+<header>
+  <span class="sigil">🔮</span>
+  <h1>Gerbang Batin</h1>
+  <p>Hipnosis · Neurosains · Dunia Spiritual — Kajian Mendalam</p>
+  <div class="divider-ornament"><span></span><em>✦</em><span></span></div>
+</header>
+<main>
+
+<!-- INTRO -->
+<div class="intro-banner">
+  <h2>✦ Selamat Datang di Perpustakaan Terlarang ✦</h2>
+  <p>Di sini tersimpan ilmu yang tak diajarkan di bangku sekolah — tentang kekuatan pikiran bawah sadar, neurosains kesadaran, dan dunia di balik yang kasat mata. Bab gratis tersedia langsung. Bab premium memerlukan kode akses dari donasi.</p>
+  <div style="margin-top:24px;padding-top:20px;border-top:1px solid rgba(201,162,39,0.25);">
+    <p style="font-family:'Cinzel',serif;font-size:1.05rem;font-style:normal;color:var(--gold-light);line-height:1.7;margin-bottom:8px;">
+      "Kebanyakan manusia menganggap dirinya kecil,<br>padahal terdapat Alam yang sangat luas."
+    </p>
+    <p style="font-family:'Cinzel',serif;font-size:0.75rem;letter-spacing:0.2em;color:var(--gold-dim);text-transform:uppercase;margin:0;">— Moch. Malvie</p>
+  </div>
+</div>
+
+<!-- MASTER PAKET -->
+<div class="master-banner">
+  <div class="master-crown">👑</div>
+  <h2>Paket MASTER — Buka Semua Bab</h2>
+  <div class="master-subtitle">✦ Akses Penuh Seumur Hidup · 14 Bab Premium ✦</div>
+  <div class="price-row">
+    <span class="price-original">Rp 700.000</span>
+    <span style="color:var(--gold-dim)">→</span>
+    <span class="price-final">Rp 500.000</span>
+    <span class="discount-badge">🔥 HEMAT 28%</span>
+  </div>
+  <div class="master-benefits">
+    <div class="master-benefit-item"><span class="bi">✦</span><span>Akses semua 14 bab premium (hipnosis, neurosains & spiritual)</span></div>
+    <div class="master-benefit-item"><span class="bi">✦</span><span>Kode akses permanen <strong>MASTER</strong> dikirim via WhatsApp</span></div>
+    <div class="master-benefit-item"><span class="bi">✦</span><span>Prioritas konsultasi langsung dengan penulis</span></div>
+    <div class="master-benefit-item"><span class="bi">✦</span><span>Update bab baru tanpa biaya tambahan</span></div>
+  </div>
+  <button class="btn-master" data-action="openMasterModal">👑 Donasi Rp 500.000 — Buka Semua Bab</button>
+  <div class="master-note">* Transfer → konfirmasi WA → terima kode <strong>MASTER</strong> dalam &lt; 1 jam</div>
+</div>
+
+<!-- BAB HIPNOSIS -->
+<div class="section-label">Bab Hipnosis</div>
+<div class="chapter-grid">
+
+  <div class="chapter-card" id="card-1">
+    <div class="card-header">
+      <div class="chapter-number">I</div>
+      <div class="card-meta"><h3>Apa Itu Hipnosis? Membongkar Mitos & Fakta</h3><div class="subtitle">Pengantar ilmu hipnosis modern & sejarahnya dari Mesmer hingga kini</div></div>
+      <div class="lock-badge free"><span>🔓</span>Gratis</div>
+    </div>
+    <div class="card-preview">Hipnosis bukan sihir. Ia adalah kondisi kesadaran yang terbukti secara neurosains — di mana pikiran sadar melemah dan alam bawah sadar menjadi sangat responsif...</div>
+  </div>
+  <div class="book-wrap" id="book-1"><div class="book"><div class="book-page">
+    <button class="close-viewer" data-action="closeViewer" data-id="1">✕</button>
+    <h2>Bab I — Apa Itu Hipnosis?</h2>
+    <p>Kata "hipnosis" berasal dari bahasa Yunani <em>hypnos</em> (tidur), namun sesungguhnya bukanlah tidur. Ia adalah kondisi <strong>trance</strong> — keadaan kesadaran yang termodifikasi, di mana fokus perhatian sangat terkonsentrasi dan pikiran kritis melemah sementara.</p>
+    <h3>Sejarah Singkat</h3>
+    <p>Franz Anton Mesmer (1734–1815) mendokumentasikannya pertama kali sebagai "magnetisme hewan". James Braid menciptakan istilah "hipnosis" pada 1840-an, memindahkannya dari mistisisme ke ranah sains. Jean-Martin Charcot menggunakannya klinis di Paris, sementara Sigmund Freud awalnya menggunakannya sebelum mengembangkan psikoanalisis.</p>
+    <h3>Mitos yang Harus Dipatahkan</h3>
+    <ul>
+      <li>❌ "Hipnosis membuat orang kehilangan kendali" — Fakta: Orang tidak akan melakukan sesuatu bertentangan dengan nilai mereka.</li>
+      <li>❌ "Hanya orang lemah yang bisa dihipnosis" — Fakta: Imajinasi tinggi & kecerdasan justru mempermudah trance.</li>
+      <li>❌ "Hipnosis = tidur" — EEG membuktikan otak tetap sangat aktif selama hipnosis.</li>
+    </ul>
+    <h3>Cara Kerjanya</h3>
+    <p>Korteks prefrontal — pusat pikiran kritis — mengalami penurunan aktivitas sementara. Area limbik dan bawah sadar menjadi lebih dominan. Gelombang otak bergeser ke frekuensi theta (4–8 Hz).</p>
+    <blockquote>"Hipnosis adalah pintu rahasia menuju gudang program mental yang membentuk seluruh kehidupan Anda."</blockquote>
+  <div class="page-number">✦</div></div></div></div>  <div class="chapter-card" id="card-2">
+    <div class="card-header">
+      <div class="chapter-number">II</div>
+      <div class="card-meta"><h3>Gelombang Otak & Tingkatan Kesadaran</h3><div class="subtitle">Gamma, Beta, Alpha, Theta, Delta — peta lengkap kesadaran manusia</div></div>
+      <div class="lock-badge free"><span>🔓</span>Gratis</div>
+    </div>
+    <div class="card-preview">Otak manusia beroperasi pada berbagai frekuensi gelombang listrik. Setiap frekuensi membuka pintu kesadaran yang berbeda...</div>
+  </div>
+  <div class="book-wrap" id="book-2"><div class="book"><div class="book-page">
+    <button class="close-viewer" data-action="closeViewer" data-id="2">✕</button>
+    <h2>Bab II — Gelombang Otak & Tingkatan Kesadaran</h2>
+    <p>Otak menghasilkan aktivitas listrik yang terukur dengan EEG. Frekuensi ini berkorelasi dengan kondisi kesadaran tertentu:</p>
+    <h3>⚡ Gamma (30–100 Hz) — Kesadaran Puncak</h3>
+    <p>Frekuensi tertinggi. Terjadi selama wawasan mendalam dan pengalaman spiritual intensitas tinggi. Meditator Tibetan menunjukkan aktivitas gamma luar biasa selama meditasi compassion.</p>
+    <h3>⚡ Beta (13–30 Hz) — Kesadaran Aktif</h3>
+    <p>Kondisi normal saat terjaga. Pikiran kritis aktif, ego kuat. Mayoritas waktu hidup modern dihabiskan di sini.</p>
+    <h3>🌊 Alpha (8–13 Hz) — Relaksasi & Imajinasi</h3>
+    <p>Saat meditasi ringan atau sebelum tidur. Kreativitas meningkat, pikiran kritis mulai melemah. Pintu pertama hipnosis.</p>
+    <h3>🌙 Theta (4–8 Hz) — Alam Bawah Sadar</h3>
+    <p>Kondisi hipnosis mendalam. Memori masa kecil bisa diakses, sugesti sangat kuat, intuisi langsung berbicara.</p>
+    <h3>💤 Delta (0.5–4 Hz) — Tidur Dalam & Pemulihan</h3>
+    <p>Tidur nyenyak dan pemulihan fisik total. Tradisi spiritual menyebut ini "kematian kecil" harian.</p>
+    <blockquote>"Masuk ke theta sambil tetap sadar — itulah definisi hipnosis sejati. Itulah yang para pertapa latih selama bertahun-tahun."</blockquote>
+  <div class="page-number">✦</div></div></div></div>  <div class="chapter-card locked" id="card-3">
+    <div class="card-header">
+      <div class="chapter-number">III</div>
+      <div class="card-meta"><h3>Teknik Induksi Hipnosis — Dari Pemula hingga Mahir</h3><div class="subtitle">Progressive relaxation, eye fixation, rapid induction, Ericksonian, Dave Elman</div></div>
+      <div class="lock-badge premium"><span>🔐</span>Premium</div>
+    </div>
+    <div class="card-preview" style="height:80px;overflow:hidden;">Ada puluhan metode induksi hipnosis. Masing-masing cocok untuk kepribadian subjek yang berbeda...
+      <div class="card-locked-overlay"><button class="unlock-btn" data-action="openModal" data-id="3" data-title="Teknik Induksi Hipnosis">🔓 Buka Bab Ini</button></div>
+    </div>
+  </div>
+
+  <div class="chapter-card locked" id="card-4">
+    <div class="card-header">
+      <div class="chapter-number">IV</div>
+      <div class="card-meta"><h3>Hipnoterapi — Menyembuhkan Luka Batin</h3><div class="subtitle">Trauma, fobia, kecanduan, self-sabotage — regresi, reframing & parts therapy</div></div>
+      <div class="lock-badge premium"><span>🔐</span>Premium</div>
+    </div>
+    <div class="card-preview" style="height:80px;overflow:hidden;">Hipnoterapi adalah aplikasi klinis hipnosis yang diakui APA dan BMA sebagai modalitas valid...
+      <div class="card-locked-overlay"><button class="unlock-btn" data-action="openModal" data-id="4" data-title="Hipnoterapi — Menyembuhkan Luka Batin">🔓 Buka Bab Ini</button></div>
+    </div>
+  </div>
+
+  <div class="chapter-card locked" id="card-5">
+    <div class="card-header">
+      <div class="chapter-number">V</div>
+      <div class="card-meta"><h3>Self-Hypnosis & Pemrograman Pikiran Bawah Sadar</h3><div class="subtitle">Protokol 5 langkah, formula sugesti efektif, waktu terbaik berlatih</div></div>
+      <div class="lock-badge premium"><span>🔐</span>Premium</div>
+    </div>
+    <div class="card-preview" style="height:80px;overflow:hidden;">15 menit setiap malam, dan dalam 30 hari Anda akan melihat perubahan nyata dalam pola pikir dan hidup Anda...
+      <div class="card-locked-overlay"><button class="unlock-btn" data-action="openModal" data-id="5" data-title="Self-Hypnosis & Pemrograman Pikiran">🔓 Buka Bab Ini</button></div>
+    </div>
+  </div>
+</div>
+
+<!-- BAB NEUROSAINS -->
+<div class="section-label neuro">Bab Neurosains Kesadaran</div>
+<div class="chapter-grid">
+
+  <div class="chapter-card neuro-card" id="card-6">
+    <div class="card-header">
+      <div class="chapter-number neuro-num">VI</div>
+      <div class="card-meta"><h3 class="neuro-title">Otak Manusia — Mesin Kesadaran Tercanggih di Alam Semesta</h3><div class="subtitle">86 miliar neuron, 100 triliun sinapsis, dan misteri kesadaran yang belum terpecahkan</div></div>
+      <div class="lock-badge free"><span>🔓</span>Gratis</div>
+    </div>
+    <div class="card-preview">Dalam 1,4 kilogram jaringan lunak tersimpan seluruh kenangan, kepribadian, dan apa yang Anda sebut "diri Anda". Neurosains mulai mengintip ke dalam misteri terbesar ini...</div>
+  </div>
+  <div class="book-wrap" id="book-6"><div class="book"><div class="book-page neuro-page">
+    <button class="close-viewer" data-action="closeViewer" data-id="6">✕</button>
+    <h2 class="neuro-h2">Bab VI — Otak Manusia: Mesin Kesadaran Tercanggih</h2>
+    <p>Otak manusia mengandung sekitar <strong>86 miliar neuron</strong>, masing-masing terhubung ke ribuan neuron lain. Total koneksi sinaptik diperkirakan mencapai <strong>100 triliun</strong> — lebih banyak dari bintang di Bima Sakti.</p>
+    <h3 class="neuro-h3">Tiga Lapisan Otak (Triune Brain)</h3>
+    <p><strong>Otak Reptil (Batang Otak):</strong> Pernapasan, detak jantung, reflek bertahan hidup. Berumur ~500 juta tahun.</p>
+    <p><strong>Otak Mamalia (Sistem Limbik):</strong> Pusat emosi, memori, ikatan sosial. Amigdala (rasa takut) dan hippocampus (memori) berada di sini.</p>
+    <p><strong>Neokorteks:</strong> Lapisan terluar paling baru. Pusat bahasa, logika, seni, dan kesadaran diri. Paling berkembang pada manusia.</p>
+    <div class="info-box">
+      <div class="info-title">🧬 Fakta Neurosains<div class="page-number">✦</div></div></div></div>      <p style="margin:0;font-size:.9rem;">Setiap pikiran yang Anda pikirkan meninggalkan jejak fisik berupa perubahan koneksi sinapsis. Inilah dasar ilmiah dari: "Anda adalah apa yang Anda pikirkan berulang kali."</p>
+    </div>
+    <h3 class="neuro-h3">Misteri Terbesar: Hard Problem of Consciousness</h3>
+    <p>Neurosains telah memetakan hampir semua fungsi otak — tapi satu pertanyaan tetap misterius: <em>bagaimana aktivitas listrik dan kimia menghasilkan pengalaman subjektif?</em> Filsuf David Chalmers menyebutnya <strong>"The Hard Problem of Consciousness"</strong> — pertanyaan yang belum terjawab.</p>
+    <blockquote class="neuro-quote">"Kita tahu lebih banyak tentang bintang miliaran tahun cahaya jauhnya daripada tentang 3 inci jaringan di balik mata kita sendiri." — Michio Kaku</blockquote>
+  </div>
+
+  <div class="chapter-card neuro-card locked" id="card-7">
+    <div class="card-header">
+      <div class="chapter-number neuro-num">VII</div>
+      <div class="card-meta"><h3 class="neuro-title">Neuroplastisitas — Otak yang Bisa Dibentuk Ulang Sepanjang Hayat</h3><div class="subtitle">Hebb's rule, neurogenesis, implikasi untuk perubahan kebiasaan & penyembuhan trauma</div></div>
+      <div class="lock-badge neuro-badge"><span>🔐</span>Premium</div>
+    </div>
+    <div class="card-preview" style="height:80px;overflow:hidden;">Selama ratusan tahun ilmuwan percaya otak dewasa tidak bisa berubah. Neurosains modern membuktikan sebaliknya secara dramatis...
+      <div class="card-locked-overlay"><button class="unlock-btn neuro-btn" data-action="openModal" data-id="7" data-title="Neuroplastisitas — Otak yang Bisa Dibentuk Ulang">🔓 Buka Bab Ini</button></div>
+    </div>
+  </div>
+
+  <div class="chapter-card neuro-card locked" id="card-8">
+    <div class="card-header">
+      <div class="chapter-number neuro-num">VIII</div>
+      <div class="card-meta"><h3 class="neuro-title">Neurokimia Kesadaran — Zat-Zat Ajaib di Dalam Otak</h3><div class="subtitle">Dopamin, serotonin, DMT endogen, oksitosin, GABA & sistem reward otak</div></div>
+      <div class="lock-badge neuro-badge"><span>🔐</span>Premium</div>
+    </div>
+    <div class="card-preview" style="height:80px;overflow:hidden;">Otak memproduksi senyawa lebih canggih dari obat-obatan terbaik yang pernah dibuat manusia. DMT endogen — "molekul jiwa" — diproduksi alami oleh kelenjar pineal...
+      <div class="card-locked-overlay"><button class="unlock-btn neuro-btn" data-action="openModal" data-id="8" data-title="Neurokimia Kesadaran — Zat Ajaib di Otak">🔓 Buka Bab Ini</button></div>
+    </div>
+  </div>
+
+  <div class="chapter-card neuro-card locked" id="card-9">
+    <div class="card-header">
+      <div class="chapter-number neuro-num">IX</div>
+      <div class="card-meta"><h3 class="neuro-title">Default Mode Network & Ego — Siapa "Anda" Sebenarnya?</h3><div class="subtitle">Jaringan default otak, narrative self, mind-wandering & mengapa meditasi mengubah segalanya</div></div>
+      <div class="lock-badge neuro-badge"><span>🔐</span>Premium</div>
+    </div>
+    <div class="card-preview" style="height:80px;overflow:hidden;">Ada jaringan di otak yang aktif justru saat Anda tidak melakukan apa-apa. Inilah tempat lahirnya "aku", narasi diri, dan hampir semua kecemasan manusia modern...
+      <div class="card-locked-overlay"><button class="unlock-btn neuro-btn" data-action="openModal" data-id="9" data-title="Default Mode Network & Ego">🔓 Buka Bab Ini</button></div>
+    </div>
+  </div>
+
+  <div class="chapter-card neuro-card locked" id="card-10">
+    <div class="card-header">
+      <div class="chapter-number neuro-num">X</div>
+      <div class="card-meta"><h3 class="neuro-title">Neurosains Meditasi — Otak Para Bhikkhu di Bawah fMRI</h3><div class="subtitle">Gamma wave tertinggi, perubahan struktural permanen, temuan Harvard, MIT & Wisconsin</div></div>
+      <div class="lock-badge neuro-badge"><span>🔐</span>Premium</div>
+    </div>
+    <div class="card-preview" style="height:80px;overflow:hidden;">Ketika para bhikkhu Tibetan dimasukkan ke dalam mesin fMRI, hasilnya mengubah pandangan neurosains tentang batas kemampuan otak manusia selamanya...
+      <div class="card-locked-overlay"><button class="unlock-btn neuro-btn" data-action="openModal" data-id="10" data-title="Neurosains Meditasi — Otak Para Bhikkhu">🔓 Buka Bab Ini</button></div>
+    </div>
+  </div>
+
+  <div class="chapter-card neuro-card locked" id="card-11">
+    <div class="card-header">
+      <div class="chapter-number neuro-num">XI</div>
+      <div class="card-meta"><h3 class="neuro-title">Neurosains Tidur & Mimpi — Laboratorium Tersembunyi</h3><div class="subtitle">Arsitektur tidur, REM, sistem glimfatik, konsolidasi memori & lucid dream</div></div>
+      <div class="lock-badge neuro-badge"><span>🔐</span>Premium</div>
+    </div>
+    <div class="card-preview" style="height:80px;overflow:hidden;">Sepertiga hidup Anda dihabiskan dalam kondisi lebih aneh dari fiksi ilmiah manapun. Saat tidur, otak melakukan pembersihan diri, konsolidasi memori, dan integrasi emosi...
+      <div class="card-locked-overlay"><button class="unlock-btn neuro-btn" data-action="openModal" data-id="11" data-title="Neurosains Tidur & Mimpi">🔓 Buka Bab Ini</button></div>
+    </div>
+  </div>
+
+  <div class="chapter-card neuro-card locked" id="card-12">
+    <div class="card-header">
+      <div class="chapter-number neuro-num">XII</div>
+      <div class="card-meta"><h3 class="neuro-title">Quantum Mind — Di Mana Fisika Kuantum Bertemu Kesadaran</h3><div class="subtitle">Teori Penrose-Hameroff, microtubule, non-locality & kesadaran universal</div></div>
+      <div class="lock-badge neuro-badge"><span>🔐</span>Premium</div>
+    </div>
+    <div class="card-preview" style="height:80px;overflow:hidden;">Apakah kesadaran adalah produk mekanik otak semata, atau fenomena kuantum yang melampaui batas ruang dan waktu? Fisikawan Roger Penrose dan Stuart Hameroff menyatakan...
+      <div class="card-locked-overlay"><button class="unlock-btn neuro-btn" data-action="openModal" data-id="12" data-title="Quantum Mind — Fisika Kuantum & Kesadaran">🔓 Buka Bab Ini</button></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- BAB SPIRITUAL -->
+<div class="section-label">Bab Spiritual</div>
+<div class="chapter-grid">
+
+  <div class="chapter-card" id="card-13">
+    <div class="card-header">
+      <div class="chapter-number">XIII</div>
+      <div class="card-meta"><h3>Kesadaran di Luar Fisik — Pengantar Dunia Spiritual</h3><div class="subtitle">NDE, kenangan kehidupan lampau, remote viewing & bukti sains modern</div></div>
+      <div class="lock-badge free"><span>🔓</span>Gratis</div>
+    </div>
+    <div class="card-preview">Dari hutan Amazon hingga biara Tibet — setiap kebudayaan manusia memiliki sistem pengetahuan tentang dimensi di luar yang tampak mata...</div>
+  </div>
+  <div class="book-wrap" id="book-13"><div class="book"><div class="book-page">
+    <button class="close-viewer" data-action="closeViewer" data-id="13">✕</button>
+    <h2>Bab XIII — Kesadaran di Luar Fisik</h2>
+    <p>Pertanyaan paling mendasar dalam spiritualitas bukan "apakah Tuhan ada?" tetapi: <em>"Apakah kesadaran lebih besar dari otak?"</em></p>
+    <h3>Bukti-bukti yang Menggugah</h3>
+    <ul>
+      <li>Pengalaman Hampir Mati (NDE) — dilaporkan 9–18% pasien jantung berhenti, termasuk mereka yang buta sejak lahir yang "melihat" selama NDE.</li>
+      <li>Kenangan kehidupan lampau anak-anak yang diverifikasi — Dr. Ian Stevenson, Universitas Virginia, 3.000+ kasus terdokumentasi.</li>
+      <li>Remote viewing — program CIA "Stargate" menggunakannya selama Perang Dingin dan hasilnya jauh di atas peluang acak.</li>
+      <li>Efek Observer dalam fisika kuantum — pengamatan sadar mengubah hasil eksperimen pada tingkat subatom.</li>
+    </ul>
+    <h3>Spiritualitas Bukan Anti-Sains</h3>
+    <p>Rupert Sheldrake, Stanislav Grof, dan Dean Radin telah mendedikasikan karier mereka untuk menjembatani sains dan spiritualitas — bukan membuktikan supranatural, tapi memperluas definisi alam.</p>
+    <blockquote>"Batas terluar ilmu pengetahuan adalah permukaan samudra kesadaran yang belum dijelajahi."</blockquote>
+  <div class="page-number">✦</div></div></div></div>  <div class="chapter-card locked" id="card-14">
+    <div class="card-header">
+      <div class="chapter-number">XIV</div>
+      <div class="card-meta"><h3>Sintesis Akhir — Meditasi, Mimpi, Energi & Past Life</h3><div class="subtitle">Di mana hipnosis, neurosains, dan spiritualitas bertemu dalam satu titik</div></div>
+      <div class="lock-badge premium"><span>🔐</span>Premium</div>
+    </div>
+    <div class="card-preview" style="height:80px;overflow:hidden;">Di bab terakhir ini semua benang yang telah kita jelajahi akhirnya bertemu. Vipassana, lucid dream, chakra, prana, dan past life regression dalam satu tapestry yang koheren...
+      <div class="card-locked-overlay"><button class="unlock-btn" data-action="openModal" data-id="14" data-title="Sintesis Akhir — Meditasi, Mimpi, Energi & Past Life">🔓 Buka Bab Ini</button></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- DONATE CTA -->
+<div class="donate-cta">
+  <h3>✦ Dukung Karya Ini ✦</h3>
+  <p>Konten ini dibuat dengan penelitian mendalam dan niat tulus untuk berbagi ilmu. Donasi Anda menjaga cahaya pengetahuan tetap menyala.</p>
+  <div class="tier-grid">
+    <div class="tier-card" data-action="selectTier"><div class="tier-icon">🌱</div><div class="tier-name">Penjelajah</div><div class="tier-desc">Rp 25.000 — 3 bab pilihan</div></div>
+    <div class="tier-card selected" data-action="selectTier"><div class="tier-icon">🧬</div><div class="tier-name">Ilmuwan</div><div class="tier-desc">Rp 150.000 — Semua bab neurosains</div></div>
+    <div class="tier-card" data-action="selectTier"><div class="tier-icon">👑</div><div class="tier-name">Master</div><div class="tier-desc">Rp 500.000 — Semua bab (hemat 28%)</div></div>
+  </div>
+  <button class="modal-submit" style="max-width:320px;margin:0 auto;display:block;" data-action="openModalDonasi">✦ Pilih Bab & Donasi</button>
+</div>
+
+</main>
+<footer>
+  <p>© 2025 Gerbang Batin &nbsp;·&nbsp; Semua hak dilindungi &nbsp;·&nbsp;
+  <a href="https://wa.me/6283871666136">WhatsApp</a> &nbsp;·&nbsp;
+  <a href="/cdn-cgi/l/email-protection#791418150f101c131800181e0b160c09391e14181015571a1614">Email</a></p>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal" id="modal-overlay-bg">
+  <div class="modal-box" id="modal-inner">
+    <button class="modal-close" data-action="closeModal">✕</button>
+    <div class="modal-sigil" id="modal-sigil">🔐</div>
+    <h2 id="modal-h2">Buka Akses Bab</h2>
+    <div class="chapter-title" id="modal-chapter-title">—</div>
+    <div class="access-tabs">
+      <button class="tab-btn active" data-action="switchTab" data-tab="donasi">💳 Donasi</button>
+      <button class="tab-btn" data-action="switchTab" data-tab="kode">🔑 Kode Akses</button>
+    </div>
+    <!-- Tab Donasi -->
+    <div class="tab-content active" id="tab-donasi">
+      <div id="master-price-block" style="display:none;">
+        <div class="master-modal-price">
+          <div class="old-price">Harga normal: Rp 700.000</div>
+          <div class="new-price">Rp 500.000</div>
+          <span class="disc-label">🔥 HEMAT 28% — PAKET MASTER</span>
+        </div>
+      </div>
+      <div class="donation-info">
+        <p>Transfer donasi ke rekening berikut, lalu kirim bukti transfer via WhatsApp untuk mendapatkan kode akses:</p>
+        <div class="bank-detail">
+          <div class="bank-name-label">Bank Mandiri</div>
+          <div class="bank-number">1820016298168</div>
+          <div class="bank-owner">a.n. HUDRI</div>
+        </div>
+        <div class="bank-detail">
+          <div class="bank-name-label">SeaBank</div>
+          <div class="bank-number">901823280710</div>
+          <div class="bank-owner">a.n. HUDRI</div>
+        </div>
+      </div>
+      <div class="form-group"><label>Nominal Donasi</label><input type="text" id="input-nominal" placeholder="Rp 50.000"></div>
+      <div class="form-group"><label>Nama Anda</label><input type="text" id="input-nama" placeholder="Nama pengirim transfer"></div>
+      <button class="modal-submit" id="submit-btn" data-action="submitDonasi">📲 Konfirmasi via WhatsApp</button>
+    </div>
+    <!-- Tab Kode -->
+    <div class="tab-content" id="tab-kode">
+      <div class="donation-info"><p>Sudah berdonasi dan mendapat kode? Masukkan kode akses Anda di bawah ini:</p></div>
+      <div class="form-group">
+        <label>Kode Akses</label>
+        <div class="code-input-wrap"><input type="text" id="kode-input" placeholder="XXXXXX" maxlength="8" oninput="this.value=this.value.toUpperCase().replace(/\s/g,'')"></div>
+      </div>
+      <button class="verify-btn" data-action="verifyKode">✦ Buka Sekarang</button>
+      <div class="alert-msg error" id="alert-error">Kode tidak valid. Periksa kembali kode Anda.</div>
+      <div class="alert-msg success" id="alert-success">✓ Akses berhasil! Bab terbuka untuk Anda.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+// STARS
+(function(){
+  var c=document.getElementById('stars');
+  if(!c)return;
+  for(var i=0;i<90;i++){
+    var s=document.createElement('div');
+    s.className='star';
+    var sz=Math.random()*2+.5;
+    s.style.cssText='width:'+sz+'px;height:'+sz+'px;top:'+(Math.random()*100)+'%;left:'+(Math.random()*100)+'%;--dur:'+(Math.random()*4+2).toFixed(1)+'s;--delay:'+(Math.random()*3).toFixed(1)+'s;';
+    c.appendChild(s);
+  }
+})();
+
+// KODE AKSES
+var VALID_CODES = {
+  'MASTER': [3,4,5,7,8,9,10,11,12,14],
+  'BATIN1': [3,4,5,7,8,9,10,11,12,14],
+  'NEURO1': [7,8,9,10,11,12],
+  'HIPNO2': [3,4,5],
+  'SPIRIT': [14],
+  'DEMO99': [3]
+};
+
+var unlockedChapters=[];
+try{unlockedChapters=JSON.parse(localStorage.getItem('gb_unlocked')||'[]');}catch(e){}
+
+// KONTEN BAB PREMIUM
+var lockedContent={
+  3:{t:'Bab III — Teknik Induksi Hipnosis',n:false,h:'<p>Induksi adalah proses membimbing seseorang masuk ke kondisi trance. Terdapat lima teknik utama:</p><h3>1. Progressive Muscle Relaxation</h3><p>Teknik paling aman untuk pemula. Subjek menegangkan dan melepaskan otot dari kaki ke kepala secara berurutan.</p><h3>2. Eye Fixation & Cognitive Overload</h3><p>Subjek menatap satu titik hingga mata lelah. Beban kognitif ditambahkan hingga pikiran kritis menyerah.</p><h3>3. Ericksonian Hypnosis</h3><p>Menggunakan bahasa sehari-hari sarat metafora dan embedded command tersembunyi. Subjek tidak menyadari sedang diinduksi.</p><h3>4. Rapid Induction</h3><p>Menggunakan kejutan fisiologis untuk melewati pikiran kritis dalam hitungan detik.</p><h3>5. Dave Elman Induction</h3><p>Teknik klasik favorit hipnoterapis — menggabungkan relaksasi fisik dan eye catalepsy.</p><blockquote>"Induksi yang terbaik adalah yang paling tidak terasa seperti induksi." — Milton H. Erickson</blockquote>'},
+  4:{t:'Bab IV — Hipnoterapi: Menyembuhkan Luka Batin',n:false,h:'<p>APA dan BMA telah mengakui hipnoterapi sebagai modalitas klinis yang valid.</p><h3>Masalah yang Bisa Ditangani</h3><ul><li>Fobia spesifik — ketinggian, hewan, jarum</li><li>PTSD dan trauma masa kecil</li><li>Kecanduan rokok, alkohol, gula</li><li>Insomnia kronik</li><li>Nyeri kronis dan psikosomatis</li></ul><h3>Teknik Regresi Usia</h3><p>Klien dibawa ke memori akar masalah. Terapis membantu memaknai ulang peristiwa dari perspektif dewasa yang bijak.</p><h3>Parts Therapy</h3><p>Hipnoterapis berkomunikasi langsung dengan bagian kepribadian yang bertanggung jawab atas perilaku bermasalah.</p><blockquote>"Kita tidak bisa mengubah apa yang terjadi di masa lalu, tapi kita bisa mengubah makna yang kita berikan padanya."</blockquote>'},
+  5:{t:'Bab V — Self-Hypnosis & Pemrograman Pikiran',n:false,h:'<p>Self-hypnosis adalah keterampilan batin paling berharga yang bisa Anda kuasai.</p><h3>Protokol 5 Langkah</h3><ul><li><strong>1. Niat:</strong> Tetapkan satu tujuan spesifik dan positif</li><li><strong>2. Relaksasi:</strong> Teknik napas 4-7-8</li><li><strong>3. Induksi:</strong> Visualisasi turun tangga, hitung mundur 10 ke 1</li><li><strong>4. Deepening:</strong> Bayangkan tempat paling damai</li><li><strong>5. Sugesti:</strong> Afirmasi present-tense dan positif</li></ul><h3>Formula Sugesti Efektif</h3><p>Bukan "Saya tidak gugup" — tapi "Saya tenang, percaya diri, dan siap."</p><h3>Waktu Terbaik</h3><p>Tepat sebelum tidur dan setelah bangun — saat alpha-theta alami.</p><blockquote>"Tidur adalah self-hypnosis alamiah. Yang membedakan adalah apakah Anda mengarahkannya."</blockquote>'},
+  7:{t:'Bab VII — Neuroplastisitas: Otak yang Bisa Dibentuk Ulang',n:true,h:'<p>Hingga 1990-an, otak dewasa dianggap tidak bisa berubah. Fred Gage (1998) membuktikan sebaliknya.</p><h3 class="neuro-h3">Prinsip Hebb</h3><p>"Neurons that fire together, wire together." Setiap kali berlatih sesuatu, otak secara harfiah berubah fisik.</p><div class="info-box"><div class="info-title">Studi Taksi London</div><p style="margin:0;font-size:.9rem;">Hippocampus pengemudi taksi London lebih besar secara fisik — semakin lama mengemudi, semakin besar pertumbuhannya.</p></div><h3 class="neuro-h3">BDNF — Pupuk Otak</h3><p>Olahraga aerobik, meditasi, dan tidur cukup adalah cara paling kuat meningkatkan BDNF secara alami.</p><blockquote class="neuro-quote">"Otak adalah organ paling plastis di alam semesta yang kita kenal." — Michael Merzenich</blockquote>'},
+  8:{t:'Bab VIII — Neurokimia Kesadaran',n:true,h:'<p>Otak adalah apotek paling canggih di alam semesta.</p><h3 class="neuro-h3">Empat Neurotransmiter Utama</h3><ul class="neuro-list"><li><strong>Dopamin</strong> — Zat antisipasi bukan kesenangan. Berlebih: adiksi. Kurang: depresi.</li><li><strong>Serotonin</strong> — Regulator suasana hati. 90% diproduksi di usus.</li><li><strong>GABA</strong> — Rem sistem saraf. Meditasi meningkatkannya secara alami.</li><li><strong>Asetilkolin</strong> — Aktif saat REM dan hipnosis mendalam.</li></ul><h3 class="neuro-h3">DMT Endogen — Molekul Jiwa</h3><p>DMT ditemukan alami di otak manusia. Dr. Rick Strassman berhipotesis DMT berperan dalam mimpi, pengalaman mistik, dan NDE.</p><h3 class="neuro-h3">Oksitosin</h3><p>Dilepaskan saat pelukan dan hipnoterapi mendalam. Meningkatkan kepercayaan dan memperkuat sugesti.</p><blockquote class="neuro-quote">"Otak memproduksi lebih banyak senyawa psikoaktif setiap malam daripada yang pernah dikonsumsi manusia sepanjang sejarah."</blockquote>'},
+  9:{t:'Bab IX — Default Mode Network & Ego',n:true,h:'<p>Tahun 2001, Marcus Raichle menemukan jaringan otak aktif justru saat tidak melakukan apa-apa — Default Mode Network (DMN).</p><h3 class="neuro-h3">Radio Station Ego</h3><p>DMN aktif saat melamun, merenungkan masa lalu, dan berpikir tentang diri sendiri — radio station ego yang tidak pernah berhenti siaran.</p><h3 class="neuro-h3">DMN dan Penderitaan Mental</h3><p>Kecemasan, depresi, dan ruminasi adalah manifestasi DMN yang hiperkatif. Overthinking adalah DMN tidak terkontrol.</p><div class="info-box"><div class="info-title">Meditasi dan DMN</div><p style="margin:0;font-size:.9rem;">Meditasi dan hipnosis mendalam menurunkan aktivitas DMN secara dramatis dalam fMRI.</p></div><blockquote class="neuro-quote">"Ego bukanlah musuh — ia penjaga gerbang. Tapi penjaga 24 jam akan menjadi tiran."</blockquote>'},
+  10:{t:'Bab X — Neurosains Meditasi: Para Bhikkhu di Bawah fMRI',n:true,h:'<p>2004 — Matthieu Ricard, bhikkhu Tibetan, dimasukkan ke mesin fMRI di lab Richard Davidson, Universitas Wisconsin.</p><h3 class="neuro-h3">Gamma Wave Tertinggi</h3><p>Selama meditasi compassion, otak Ricard menghasilkan gelombang gamma tertinggi yang pernah direkam dalam literatur ilmiah.</p><h3 class="neuro-h3">Perubahan Struktural Permanen</h3><ul class="neuro-list"><li>Korteks insula (empati) lebih tebal</li><li>Amigdala (rasa takut) lebih kecil dan kurang reaktif</li><li>Korteks prefrontal kiri (ketenangan) lebih aktif</li><li>Hippocampus lebih padat dan tahan penuaan</li></ul><blockquote class="neuro-quote">"Kami tidak menyangka otak mereka terlihat seperti otak yang sama sekali berbeda." — Richard Davidson, PhD</blockquote>'},
+  11:{t:'Bab XI — Neurosains Tidur & Mimpi',n:true,h:'<p>Tidur bukan pemulihan pasif. Selama tidur otak melakukan pekerjaan yang tidak bisa dilakukan saat terjaga.</p><h3 class="neuro-h3">Siklus 90 Menit</h3><p>NREM1 (transisi), NREM2 (konsolidasi memori), NREM3/4 (pemulihan fisik), REM (mimpi dan integrasi emosi) — berulang 4-6 kali per malam.</p><h3 class="neuro-h3">REM: Otak Terbangun di Dalam Tidur</h3><p>Saat REM, korteks prefrontal tidak aktif — inilah mengapa hal absurd tampak masuk akal dalam mimpi.</p><div class="info-box"><div class="info-title">Lucid Dream dan Neurosains</div><p style="margin:0;font-size:.9rem;">Saat lucid dream, korteks prefrontal dorsolateral kembali menyala — itulah sumber kesadaran dalam mimpi.</p></div><h3 class="neuro-h3">Sistem Glimfatik</h3><p>Saat tidur nyenyak, sel glial menyusut 60% — otak mencuci dirinya dari protein beta-amyloid penyebab Alzheimer.</p><blockquote class="neuro-quote">"Kurang tidur adalah membiarkan sampah neurologis menumpuk setiap malam." — Matthew Walker, PhD</blockquote>'},
+  12:{t:'Bab XII — Quantum Mind: Fisika Kuantum & Kesadaran',n:true,h:'<p>Sejumlah fisikawan terkemuka mengajukan pandangan radikal: kesadaran bukan sekadar produk sampingan otak.</p><h3 class="neuro-h3">Teori Orch-OR</h3><p>Penrose dan Hameroff: kesadaran muncul dari komputasi kuantum di dalam microtubules — struktur protein di dalam neuron.</p><h3 class="neuro-h3">Non-Locality</h3><p>Eksperimen Bell membuktikan partikel yang pernah berinteraksi tetap terhubung meski dipisahkan jarak tak terhingga. Kesadaran mungkin bersifat non-lokal.</p><div class="info-box"><div class="info-title">Hard Problem of Consciousness</div><p style="margin:0;font-size:.9rem;">David Chalmers: kita bisa menjelaskan semua fungsi otak, tapi tidak bisa menjelaskan mengapa ada pengalaman subjektif.</p></div><blockquote class="neuro-quote">"Siapa pun yang tidak terkejut dengan mekanika kuantum tidak benar-benar memahaminya." — Niels Bohr</blockquote>'},
+  14:{t:'Bab XIV — Sintesis Akhir: Meditasi, Mimpi, Energi & Past Life',n:false,h:'<p>Semua benang — hipnosis, neurosains, spiritualitas — akhirnya bertemu dalam satu tapestry yang koheren.</p><h3>Tiga Tradisi, Satu Pengalaman</h3><p>Vipassana, Muraqabah Sufisme, Samadhi Yoga — semua mengarah pada kesadaran murni tanpa objek. Neurosains menyebutnya deaktivasi DMN. Sufi menyebutnya fana.</p><h3>Lucid Dream sebagai Latihan Spiritual</h3><p>Dalam Tibetan Dream Yoga, lucid dream mempersiapkan kesadaran untuk bardo — alam antara kematian dan kelahiran kembali.</p><h3>Energi Halus dan Biofield</h3><p>HeartMath Institute mengukur medan elektromagnetik jantung yang meluas 1-2 meter dan berinteraksi dengan orang di sekitar kita.</p><h3>Past Life Regression</h3><p>Dr. Brian Weiss, Dr. Michael Newton, dan Ian Stevenson mengumpulkan ribuan kasus yang sulit dijelaskan paradigma materialistik semata.</p><blockquote>"Di pintu terakhir ini, pertanyaannya bukan apakah ini nyata — tapi siapakah yang bertanya?"</blockquote>'}
+};
+
+// BOOK FLIP
+function toggleViewer(id){
+  var wrap=document.getElementById('book-'+id);
+  if(!wrap)return;
+  var isOpen=wrap.classList.contains('active');
+  document.querySelectorAll('.book-wrap.active').forEach(function(w){
+    if(w.id!=='book-'+id){
+      var b=w.querySelector('.book');
+      if(b){b.classList.add('closing');setTimeout(function(){w.classList.remove('active');b.classList.remove('closing');},440);}
+      else{w.classList.remove('active');}
+    }
+  });
+  if(isOpen){
+    var b=wrap.querySelector('.book');
+    if(b){b.classList.add('closing');setTimeout(function(){wrap.classList.remove('active');b.classList.remove('closing');},440);}
+    else{wrap.classList.remove('active');}
+  } else {
+    wrap.classList.add('active');
+    setTimeout(function(){wrap.scrollIntoView({behavior:'smooth',block:'nearest'});},60);
+  }
+}
+
+function closeViewer(id){
+  var wrap=document.getElementById('book-'+id);
+  if(!wrap)return;
+  var b=wrap.querySelector('.book');
+  if(b){b.classList.add('closing');setTimeout(function(){wrap.classList.remove('active');b.classList.remove('closing');},440);}
+  else{wrap.classList.remove('active');}
+}
+
+function ensureViewer(id){
+  if(document.getElementById('book-'+id))return;
+  var data=lockedContent[id];
+  if(!data)return;
+  var card=document.getElementById('card-'+id);
+  if(!card)return;
+  var wrap=document.createElement('div');
+  wrap.className='book-wrap';
+  wrap.id='book-'+id;
+  var pageClass='book-page'+(data.n?' neuro-page':'');
+  var h2Class=data.n?'neuro-h2':'';
+  wrap.innerHTML='<div class="book"><div class="'+pageClass+'"><button class="close-btn-x" style="position:absolute;top:14px;right:16px;background:rgba(3,3,8,.8);border:1px solid #2a1f4e;color:#7a7395;width:30px;height:30px;border-radius:2px;cursor:pointer;font-size:.9rem;display:flex;align-items:center;justify-content:center;z-index:10;">&#x2715;</button><h2 class="'+h2Class+'">'+data.t+'</h2>'+data.h+'<div class="page-number">&#x2736;</div></div></div>';
+  wrap.querySelector('.close-btn-x').addEventListener('click',function(){closeViewer(id);});
+  card.after(wrap);
+}
+
+function selectTier(el){
+  document.querySelectorAll('.tier-card').forEach(function(c){c.classList.remove('selected');});
+  el.classList.add('selected');
+}
+
+// FREE CHAPTERS
+[1,2,6,13].forEach(function(id){
+  var card=document.getElementById('card-'+id);
+  if(card)card.addEventListener('click',function(){toggleViewer(id);});
+});
+
+// RESTORE UNLOCKED
+if(unlockedChapters.length) unlockChaptersUI(unlockedChapters);
+
+// EVENT DELEGATION
+document.body.addEventListener('click',function(e){
+  var el=e.target.closest('[data-action]');
+  if(!el)return;
+  var action=el.dataset.action;
+  if(action==='openModal'){openModal(parseInt(el.dataset.id),el.dataset.title);}
+  else if(action==='openMasterModal'){openMasterModal();}
+  else if(action==='openModalDonasi'){openModalDonasi();}
+  else if(action==='submitDonasi'){submitDonasi();}
+  else if(action==='verifyKode'){verifyKode();}
+  else if(action==='closeModal'){closeModal();}
+  else if(action==='switchTab'){switchTab(el.dataset.tab,el);}
+  else if(action==='selectTier'){selectTier(el);}
+  else if(action==='closeViewer'){closeViewer(parseInt(el.dataset.id));}
+});
+
+var modalOverlay=document.getElementById('modal');
+if(modalOverlay){
+  modalOverlay.addEventListener('click',function(e){
+    if(e.target===modalOverlay)closeModal();
+  });
+}
+
+// MODAL
+var currentChapterId=null,isMasterModal=false;
+
+function openModal(id,title){
+  currentChapterId=id;isMasterModal=false;
+  document.getElementById('modal-chapter-title').textContent=title;
+  document.getElementById('modal-h2').textContent='Buka Akses Bab';
+  document.getElementById('modal-sigil').textContent='🔐';
+  document.getElementById('master-price-block').style.display='none';
+  document.getElementById('submit-btn').className='modal-submit';
+  document.getElementById('submit-btn').textContent='📲 Konfirmasi via WhatsApp';
+  document.getElementById('input-nominal').placeholder='Rp 50.000';
+  document.getElementById('input-nominal').value='';
+  document.getElementById('modal-inner').classList.remove('master-modal');
+  showModal();
+}
+
+function openMasterModal(){
+  currentChapterId='all';isMasterModal=true;
+  document.getElementById('modal-chapter-title').textContent='Akses Penuh 14 Bab Premium — Hemat 28%';
+  document.getElementById('modal-h2').textContent='Paket MASTER';
+  document.getElementById('modal-sigil').textContent='👑';
+  document.getElementById('master-price-block').style.display='block';
+  document.getElementById('submit-btn').className='modal-submit master-submit';
+  document.getElementById('submit-btn').textContent='👑 Konfirmasi Donasi Rp 500.000';
+  document.getElementById('input-nominal').value='Rp 500.000';
+  document.getElementById('modal-inner').classList.add('master-modal');
+  showModal();
+}
+
+function openModalDonasi(){openModal(null,'Akses Bab Premium Pilihan');}
+
+function showModal(){
+  document.getElementById('modal').classList.add('active');
+  document.body.style.overflow='hidden';
+  hideAlerts();
+  document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
+  document.querySelectorAll('.tab-content').forEach(function(c){c.classList.remove('active');});
+  document.querySelectorAll('.tab-btn')[0].classList.add('active');
+  document.getElementById('tab-donasi').classList.add('active');
+}
+
+function closeModal(){
+  document.getElementById('modal').classList.remove('active');
+  document.body.style.overflow='';
+}
+
+function switchTab(tab,el){
+  document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
+  document.querySelectorAll('.tab-content').forEach(function(c){c.classList.remove('active');});
+  if(el)el.classList.add('active');
+  var tabEl=document.getElementById('tab-'+tab);
+  if(tabEl)tabEl.classList.add('active');
+  hideAlerts();
+}
+
+function submitDonasi(){
+  var nominal=document.getElementById('input-nominal').value.trim();
+  var nama=document.getElementById('input-nama').value.trim();
+  if(!nama){alert('Harap isi nama Anda.');return;}
+  var bab=isMasterModal?'PAKET MASTER — Semua Bab Premium':document.getElementById('modal-chapter-title').textContent;
+  var nomStr=nominal||(isMasterModal?'Rp 500.000':'Rp 50.000');
+  var msg=encodeURIComponent('Assalamualaikum, saya *'+nama+'* ingin konfirmasi donasi:\n\nBab: *'+bab+'*\nNominal: *'+nomStr+'*\n\nMohon dikirimkan kode akses. Terima kasih');
+  window.open('https://wa.me/6283871666136?text='+msg,'_blank');
+}
+
+function verifyKode(){
+  var kode=document.getElementById('kode-input').value.trim().toUpperCase();
+  hideAlerts();
+  if(VALID_CODES[kode]){
+    var chapters=VALID_CODES[kode];
+    chapters.forEach(function(id){if(unlockedChapters.indexOf(id)===-1)unlockedChapters.push(id);});
+    try{localStorage.setItem('gb_unlocked',JSON.stringify(unlockedChapters));}catch(e){}
+    document.getElementById('alert-success').classList.add('show');
+    setTimeout(function(){
+      closeModal();
+      unlockChaptersUI(chapters);
+      if(currentChapterId&&currentChapterId!=='all'&&chapters.indexOf(currentChapterId)>-1){
+        setTimeout(function(){openUnlockedViewer(currentChapterId);},400);
+      }
+    },1300);
+  } else {
+    document.getElementById('alert-error').classList.add('show');
+  }
+}
+
+function hideAlerts(){
+  document.getElementById('alert-error').classList.remove('show');
+  document.getElementById('alert-success').classList.remove('show');
+}
+
+function unlockChaptersUI(ids){
+  ids.forEach(function(id){
+    var card=document.getElementById('card-'+id);
+    if(!card)return;
+    card.classList.remove('locked');
+    var overlay=card.querySelector('.card-locked-overlay');
+    if(overlay)overlay.remove();
+    var badge=card.querySelector('.lock-badge');
+    if(badge){badge.className='lock-badge free';badge.innerHTML='<span>🔓</span>Terbuka';}
+    card.style.cursor='pointer';
+    (function(cid){card.onclick=function(){toggleViewer(cid);};})(id);
+    ensureViewer(id);
+  });
+}
+
+function openUnlockedViewer(id){
+  var wrap=document.getElementById('book-'+id);
+  if(wrap){wrap.classList.add('active');setTimeout(function(){wrap.scrollIntoView({behavior:'smooth',block:'start'});},60);}
+}
+
+}); // end DOMContentLoaded
+</script>
+</body>
+</html>
