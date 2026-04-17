@@ -1,1 +1,0 @@
-# Gerbang-Goib
